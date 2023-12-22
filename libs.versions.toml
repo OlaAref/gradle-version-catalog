@@ -1,0 +1,30 @@
+[versions]
+#plugins
+springBootVersion = "3.2.0"
+dependencyManagementVersion = "1.1.4"
+kotlinVersion = "1.9.21"
+#libraries
+jackson = "2.16.0"
+
+
+[libraries]
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
+spring-boot-starter-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-data-redis = { module = "org.springframework.data:spring-data-redis" }
+
+
+[bundles]
+# Define bundles/groups of libraries
+spring-boot-bundle = ["spring-boot-starter-web", "spring-boot-starter-jdbc"]
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "springBootVersion" }
+dependency-management = { id = "io.spring.dependency-management", version.ref = "dependencyManagementVersion" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinVersion" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlinVersion" }
+kotlin-plugin-allopen = { id = "org.jetbrains.kotlin.plugin.allopen", version.ref = "kotlinVersion" }
+
